@@ -1,7 +1,8 @@
 kind: pipeline
 name: default
+
 steps:
-    -   name: Hello World
-        image: centos
-        commands:
-            - echo Hello World
+- name: Hello World
+  image: node
+  commands:
+    - echo Hello World
