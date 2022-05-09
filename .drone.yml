@@ -8,9 +8,15 @@ steps:
     - echo Hello World update
     - docker-compose -v
 
-- name: Drone Next deploy
+- name: docker-build
   image: docker
+  volumes:
+  - name: cache
+    path: /var/run/docker.sock
   commands:
-    # - docker-compose -p nextjs down
-    # - docker-compose -p nextjs up -d
-    -docker -H unix:///var/run/docker.sock build .
+    - docker build -t nextjs .
+
+volumes:
+- name: cache
+  host:
+    path: /var/run/docker.sock
