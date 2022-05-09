@@ -9,7 +9,8 @@ steps:
     path: /var/run/docker.sock
   commands:
     - docker-compose down
-    - docker-compose up -d
+    # - docker-compose up -d
+    - docker-compose up --force-recreate --build -d
 
 volumes:
 - name: cache
