@@ -18,4 +18,6 @@ steps:
   image: docker/compose
   commands:
     - echo compose
-    - docker-compose up -d
+    - docker-compose -v
+    - docker-compose -p nextjs down
+    - docker-compose -p nextjs up -d
