@@ -3,20 +3,7 @@ name: default
 
 steps:
 - name: Drone Next
-  image: node
+  image: docker
   commands:
     - echo Hello World update
-    - yarn
-    - yarn build
-
----
-
-kind: pipeline
-type: ssh
-name: ssh
-
-steps:
-- name: Drone Next SSH
-  commands:
-    - echo ssh
-    - ls
+    - docker-compose up -d
