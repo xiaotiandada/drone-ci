@@ -3,8 +3,8 @@ name: default
 
 steps:
 - name: Drone Next
-  image: node
+  image: docker
   commands:
     - echo Hello World update
-    - yarn
-    - yarn build
+    - docker build -t nextjs-docker .
+    - docker run -p 3000:3000 nextjs-docker
