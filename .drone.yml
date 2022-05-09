@@ -7,17 +7,10 @@ steps:
   commands:
     - echo Hello World update
     - docker -v
-
-- name: Drone Next compose
-  image: docker/compose
-  commands:
-    - echo compose
     - docker-compose -v
 
 - name: Drone Next deploy
   image: docker/compose
   commands:
-    - echo compose
-    - docker-compose -v
     - docker-compose -p nextjs down
     - docker-compose -p nextjs up -d
