@@ -13,6 +13,4 @@ steps:
   commands:
     # - docker-compose -p nextjs down
     # - docker-compose -p nextjs up -d
-    -docker -H unix:///var/run/docker.sock build -t nextjs-docker .
-
-
+    -docker -H unix:///var/run/docker.sock build .
