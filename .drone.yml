@@ -3,6 +3,7 @@ name: docker
 
 steps:
 - name: Drone Next
+  immage: docker
   volumes:
     - name: dockersock
       path: /var/run/docker.sock
