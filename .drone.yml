@@ -9,8 +9,5 @@ steps:
 steps:
 - name: Drone Next Build
   image: ssh
-  host:
-    - 127.0.0.1
-  port: 22
   script:
     - ls
