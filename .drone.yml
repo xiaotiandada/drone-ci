@@ -3,7 +3,6 @@ name: default
 
 steps:
 - name: Drone Next
-  image: docker
   commands:
     - echo Hello World update
     - docker build -t nextjs-docker .
