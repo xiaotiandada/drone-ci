@@ -7,4 +7,9 @@ steps:
   commands:
     - echo Hello World update
     - docker -v
+
+- name: Drone Next compose
+  image: docker/compose
+  commands:
+    - echo compose
     - docker-compose -v
