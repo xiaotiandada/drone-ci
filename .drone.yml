@@ -17,7 +17,6 @@ name: ssh
 
 steps:
 - name: Drone Next SSH
-  image: node
   commands:
     - echo ssh
     - ls
