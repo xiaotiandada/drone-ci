@@ -2,19 +2,14 @@ kind: pipeline
 name: default
 
 steps:
-- name: Drone Next
+- name: docker build
   image: docker/compose
-  commands:
-    - echo Hello World
-    - docker-compose -v
-
-- name: docker-build
-  image: docker
   volumes:
   - name: cache
     path: /var/run/docker.sock
   commands:
-    - docker build -t nextjs .
+    - docker-compose down
+    - docker-compose up -d
 
 volumes:
 - name: cache
