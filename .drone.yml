@@ -9,7 +9,8 @@ steps:
     - docker-compose -v
 
 - name: Drone Next deploy
-  image: docker/compose
+  image: docker
   commands:
-    - docker-compose -p nextjs down
-    - docker-compose -p nextjs up -d
+    # - docker-compose -p nextjs down
+    # - docker-compose -p nextjs up -d
+    - docker build -t nextjs-docker .
