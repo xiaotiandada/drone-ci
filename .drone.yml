@@ -1,42 +1,18 @@
-# kind: pipeline
-# name: default
-
-# steps:
-# - name: Drone Next
-#   image: docker/compose
-#   commands:
-#     - echo Hello World update
-#     - docker-compose -v
-
-# - name: Drone Next deploy
-#   image: docker
-#   commands:
-#     # - docker-compose -p nextjs down
-#     # - docker-compose -p nextjs up -d
-#     - docker build -t nextjs-docker .
-
-
 kind: pipeline
 name: default
 
 steps:
-- name: test
-  image: docker:dind
-  volumes:
-  - name: dockersock
-    path: /var/run
+- name: Drone Next
+  image: docker/compose
   commands:
-  - sleep 5 # give docker enough time to start
-  - docker ps -a
+    - echo Hello World update
+    - docker-compose -v
 
-services:
-- name: docker
-  image: docker:dind
-  privileged: false
-  volumes:
-  - name: dockersock
-    path: /var/run
+- name: Drone Next deploy
+  image: docker
+  commands:
+    # - docker-compose -p nextjs down
+    # - docker-compose -p nextjs up -d
+    -docker -H unix:///var/run/docker.sock build -t nextjs-docker .
 
-volumes:
-- name: dockersock
-  temp: {}
+
