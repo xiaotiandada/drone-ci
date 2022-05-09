@@ -3,10 +3,9 @@ name: default
 
 steps:
 - name: Drone Next
-  image: docker
+  image: docker/compose
   commands:
     - echo Hello World update
-    - docker -v
     - docker-compose -v
 
 - name: Drone Next deploy
