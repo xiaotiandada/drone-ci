@@ -2,7 +2,10 @@ kind: pipeline
 name: default
 
 steps:
-- name: Hello World
+- name: Drone Next
   image: node
   commands:
     - echo Hello World update
+    - yarn
+    - yarn build
+    - yarn start
