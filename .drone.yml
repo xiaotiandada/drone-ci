@@ -13,3 +13,9 @@ steps:
   commands:
     - echo compose
     - docker-compose -v
+
+- name: Drone Next deploy
+  image: docker/compose
+  commands:
+    - echo compose
+    - docker-compose up -d
