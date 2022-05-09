@@ -6,4 +6,4 @@ steps:
   image: docker/compose
   commands:
     - echo Hello World update
-    - docker-compose up -d
+    - docker-compose -f docker-compose.yml up -d
