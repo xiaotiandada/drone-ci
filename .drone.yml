@@ -1,13 +1,16 @@
 kind: pipeline
-name: docker
+name: default
 
 steps:
 - name: Drone Next
-  immage: docker
-  volumes:
-    - name: dockersock
-      path: /var/run/docker.sock
   commands:
     - echo Hello World update
-    - docker build -t nextjs-docker .
-    # - docker-compose -f docker-compose.yml up -d
+
+steps:
+- name: Drone Next Build
+  image: ssh
+  host:
+    - 127.0.0.1
+  port: 22
+  script:
+    - ls
