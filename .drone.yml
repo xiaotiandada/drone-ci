@@ -2,10 +2,15 @@ kind: pipeline
 name: default
 
 steps:
-- name: Drone Next
+- name: Drone Next Install
   image: node
   commands:
     - echo Hello World update
     - yarn
     - yarn build
-    - yarn start
+
+steps:
+- name: Drone Next Build
+  image: node
+  commands:
+    - yarn build
