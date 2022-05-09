@@ -1,11 +1,11 @@
 kind: pipeline
-name: default
+name: docker
 
 steps:
 - name: Drone Next
-  image: docker
   volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
+    - name: dockersock
+      path: /var/run/docker.sock
   commands:
     - echo Hello World update
     - docker build -t nextjs-docker .
