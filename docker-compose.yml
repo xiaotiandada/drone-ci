@@ -6,4 +6,5 @@ services:
     ports:
       - 3003:3000
     build:
+      context: ./
       dockerfile: Dockerfile
