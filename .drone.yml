@@ -5,7 +5,7 @@ steps:
 - name: Drone Next
   image: docker/compose
   commands:
-    - echo Hello World update
+    - echo Hello World
     - docker-compose -v
 
 - name: docker-build
